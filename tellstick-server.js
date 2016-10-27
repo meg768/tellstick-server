@@ -27,6 +27,8 @@ var App = function() {
 		redirectLogs(Path.join(path, name));
 	}
 
+	console.log('Listening to ports %d and %d...', cmd.port, cmd.tellstick);
+	
 	var io = require('socket.io').listen(cmd.port);
 	var telldus = require('socket.io').listen(cmd.tellstick);
 

@@ -28,7 +28,7 @@ var App = function() {
 	}
 
 	console.log('Listening to ports %d and %d...', cmd.port, cmd.tellstick);
-	
+
 	var io = require('socket.io').listen(cmd.port);
 	var telldus = require('socket.io').listen(cmd.tellstick);
 
@@ -41,7 +41,6 @@ var App = function() {
 		});
 
 		socket.on('tellstick', function(data) {
-			console.log('Broadcast event!', data);
 			io.emit('tellstick', data);
 		});
 

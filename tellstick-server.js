@@ -52,12 +52,10 @@ var App = function() {
 		console.log('A TellStick-listener connected.');
 
 		socket.on('turnOn', function(data) {
-			console.log('Turning on', data);
 			telldus.emit('turnOn', data);
 		});
 
 		socket.on('turnOff', function(data) {
-			console.log('Turning off', data);
 			telldus.emit('turnOff', data);
 		});
 
